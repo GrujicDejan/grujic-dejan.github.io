@@ -1,4 +1,36 @@
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import Notification from '../components/Notification';
+
 export default function ContactSection() {
+  const form = useRef();
+  const [notificationContent, setNotificationContent] = useState('');
+  const [isSuccess, setIsSuccess] = useState(true);
+  const [notificationVisible, setNotificationVisible] = useState(false);
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+
+    try {
+      const result = await emailjs.sendForm('service_pfe5o2x', 'template_o69xvi8', form.current, 'QhNCnWuggK531Opoa');
+      console.log(result.text);
+      setNotificationContent('Email successfully sent!');
+      setIsSuccess(true);
+      setNotificationVisible(true);
+      form.current.reset();
+    } catch (error) {
+      console.log(error.text);
+      setNotificationContent('Error sending email. Please try again.');
+      setIsSuccess(false);
+      setNotificationVisible(true);
+    }
+  };
+
+  const closeNotification = () => {
+    setNotificationVisible(false);
+  };
+
+
   return (
     <div
       className="relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8"
@@ -37,9 +69,9 @@ export default function ContactSection() {
         </p>
       </div>
       <form
-        action="#"
-        method="POST"
         className="mx-auto mt-16 max-w-xl sm:mt-20"
+        onSubmit={sendEmail}
+        ref={form}
       >
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div className="sm:col-span-2 relative">
@@ -52,8 +84,9 @@ export default function ContactSection() {
             <div className="relative">
               <i className="absolute inset-y-0 left-0 flex items-center pl-3.5 text-gray-400 fas fa-user"></i>
               <input
+                required
                 type="text"
-                name="name"
+                name="user_name"
                 id="name"
                 autoComplete="given-name"
                 placeholder="Your name"
@@ -72,8 +105,9 @@ export default function ContactSection() {
             <div className="mt-2.5 relative">
               <i className="absolute inset-y-0 left-0 flex items-center pl-3.5 text-gray-400 fas fa-envelope"></i>
               <input
+                required
                 type="email"
-                name="email"
+                name="user_email"
                 id="email"
                 autoComplete="email"
                 className="pl-10 pr-3.5 py-2 w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -90,6 +124,7 @@ export default function ContactSection() {
             </label>
             <div className="mt-2.5">
               <textarea
+                required
                 name="message"
                 id="message"
                 rows={4}
@@ -109,6 +144,8 @@ export default function ContactSection() {
           </button>
         </div>
       </form>
+
+      <Notification content={notificationContent} isSuccess={isSuccess} onClose={closeNotification} />
     </div>
   );
 }
