@@ -4,7 +4,7 @@ import { FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-8">
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
+      <div className="container mx-auto lg:px-8 flex flex-col lg:flex-row items-center justify-between">
         <div className="mb-4 lg:mb-0">
           <p className="text-sm opacity-70">
             &copy; 2023 Dejan Grujić, Inc. All rights reserved.
