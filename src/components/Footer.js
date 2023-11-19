@@ -12,17 +12,17 @@ const Footer = () => {
         </div>
         <div className="flex space-x-4">
           <a
-            href="https://github.com/"
+            href="https://github.com/GrujicDejan"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaGithub className="text-white" />
           </a>
-          <a href="mailto:your@email.com">
+          <a href="mailto:dejan.grujic2000@gmail.com">
             <FaEnvelope className="text-white" />
           </a>
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/dejan-grujic"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -23,11 +23,6 @@ export default function HomeSection() {
               <span className="bg-gradient-to-r from-[#8B0000] to-[#FF7F50] text-transparent bg-clip-text">Full-stack Web<br/></span>{' '}
               <span className="bg-gradient-to-r from-[#111c4a] to-[#3961a1] text-transparent bg-clip-text"> Developer</span>
             </h1>
-            
-
-            {/* <p className="mt-6 text-lg leading-8 text-gray-600">
-              a full-stack web developer.
-            </p> */}
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="#contact"
@@ -36,7 +31,8 @@ export default function HomeSection() {
                 Contact Me
               </a>
               <a
-                href="#"
+                target="_blank"
+                href="https://www.linkedin.com/in/dejan-grujic"
                 className="text-sm font-semibold leading-6 text-gray-900"
               >
                 View my LinkedIn <span aria-hidden="true">→</span>
