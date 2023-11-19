@@ -94,7 +94,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             <ScrollLink to="home" smooth={true} duration={500}>
               <span className="sr-only">Your Company</span>
-              <div className="text-lg font-bold text-gray-900">Dejan Grujić</div>
+              <div className="text-lg font-bold text-blue-900">Dejan Grujić</div>
             </ScrollLink>
             <button
               type="button"

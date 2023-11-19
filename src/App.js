@@ -11,11 +11,11 @@ function App() {
       <header className="App-header">
         <Navbar className="fixed"></Navbar>
       </header>
-      <body>
-        <HomeSection></HomeSection>
-        <AboutSection></AboutSection>
-        <ContactSection></ContactSection>
-      </body>
+      
+      <HomeSection></HomeSection>
+      <AboutSection></AboutSection>
+      <ContactSection></ContactSection>
+
       <footer>
         <Footer></Footer>
       </footer>
