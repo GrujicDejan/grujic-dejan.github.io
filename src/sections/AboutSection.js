@@ -2,7 +2,7 @@ import image from "../assets/images/img.jpg";
 
 export default function AboutSection() {
   return (
-    <section className="py-16 bg-gray-100" id="about">
+    <section className="py-16 bg-gray-100 section" id="about">
       <div className="container mx-auto px-4 max-w-4xl">
         <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
           About Us
