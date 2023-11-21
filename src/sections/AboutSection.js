@@ -5,7 +5,7 @@ export default function AboutSection() {
     <section className="py-16 bg-gray-100 section" id="about">
       <div className="container mx-auto px-4 max-w-4xl">
         <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
-          About Us
+          About Me
         </h2>
         <div className="flex flex-col md:flex-row items-center md:justify-between">
           <div className="sm:w-1/2 mb-4 md:mb-0">
